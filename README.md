@@ -3,11 +3,11 @@
 *A time managing micro service that provides a summary of wasted time.*
 
 ## Testing
-*The testing examples are here to provide some basic documentation on testing the application. Take a look at the spec file for mre examples.*
+*The testing examples are here to provide some basic documentation on testing the application. Take a look at the spec file for more examples.*
 
-GET Example:
+### GET Example:
 
-Controller
+**Controller**
 ```
 @app.route('/summary', methods=['GET'])
 def get_summary():
@@ -19,7 +19,7 @@ def get_summary():
     return jsonify(data)
 ```
  
-Spec
+**Spec**
 
 *Verify the response and status code. Note that we have to load the object into a json object before verifying.*
 
