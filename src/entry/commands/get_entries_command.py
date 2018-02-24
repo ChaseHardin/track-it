@@ -1,4 +1,4 @@
-class Entry:
+class EntryCommand:
     def __init__(self):
         pass
 

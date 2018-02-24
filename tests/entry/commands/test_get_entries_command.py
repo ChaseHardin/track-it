@@ -1,10 +1,10 @@
 import unittest
 
-from entry.entry_service import Entry
+from entry.commands.get_entries_command import EntryCommand
 
 
-class TestSummaryService(unittest.TestCase):
-    def test_get_entries__when_multiple_entries_exist(self):
+class TestGetEntriesCommand(unittest.TestCase):
+    def test_get_entries_command__when_multiple_entries_exist(self):
         expected = [
             {
                 'id': 1,
@@ -18,6 +18,6 @@ class TestSummaryService(unittest.TestCase):
             }
         ]
 
-        actual = Entry.get_entries()
+        actual = EntryCommand.get_entries()
 
         self.assertEqual(actual, expected)
