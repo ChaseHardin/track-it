@@ -17,12 +17,20 @@ class TestApp(unittest.TestCase):
         self.assertEqual(response.data, "Service is Healthy")
 
     def test_get_summary__when_multiple_times_have_been_entered(self):
-        expected_response = [{
-            'id': 1,
-            'category': 'merge request'
-        }]
+        expected_response = [
+            {
+                'id': 1,
+                'category': 'merge request',
+                'summary': 'trying to get people to review'
+            },
+            {
+                'id': 2,
+                'category': 'build is down',
+                'summary': 'external team broke build'
+            }
+        ]
 
-        actual_response = self.app.get('/summary')
+        actual_response = self.app.get('/entry')
         data = json.loads(actual_response.get_data())
 
         self.assertEqual(actual_response.status_code, 200)

@@ -46,3 +46,6 @@ class TestApp(unittest.TestCase):
         self.assertEqual(actual_response.status_code, 200)
         self.assertEqual(data, expected_response)
 ```
+
+## Dependencies 
+- [Marshmellow](http://marshmallow.readthedocs.io/en/latest/examples.html)
