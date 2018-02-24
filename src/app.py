@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 
-from entry.entry_service import Entry
+from entry.services.entry_service import EntryService
 
 app = Flask(__name__)
 
@@ -12,4 +12,4 @@ def ping():
 
 @app.route('/entry', methods=['GET'])
 def get_entries():
-    return jsonify(Entry.get_entries())
+    return jsonify(EntryService.get_entries())

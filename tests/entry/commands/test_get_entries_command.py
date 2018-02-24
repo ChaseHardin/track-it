@@ -1,10 +1,11 @@
-class Entry:
-    def __init__(self):
-        pass
+import unittest
 
-    @staticmethod
-    def get_entries():
-        return [
+from entry.commands.get_entries_command import GetEntriesCommand
+
+
+class TestEntriesCommand(unittest.TestCase):
+    def test_get_entries__when_multiple_entries_exist(self):
+        expected = [
             {
                 'id': 1,
                 'category': 'merge request',
@@ -16,3 +17,7 @@ class Entry:
                 'summary': 'external team broke build'
             }
         ]
+
+        actual = GetEntriesCommand().get_entries()
+
+        self.assertEqual(actual, expected)
