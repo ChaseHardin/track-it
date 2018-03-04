@@ -1,4 +1,4 @@
-from entry.commands.get_entries_command import GetEntriesCommand
+from src.entry.commands.get_entries_command import GetEntriesCommand
 
 
 class EntryService:

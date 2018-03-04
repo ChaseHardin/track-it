@@ -10,6 +10,6 @@ def ping():
     return "Service is Healthy"
 
 
-@app.route('/entry', methods=['GET'])
+@app.route('/entries', methods=['GET'])
 def get_entries():
-    return jsonify(EntryService.get_entries())
+    return jsonify(EntryService().get_entries())

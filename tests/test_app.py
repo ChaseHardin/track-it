@@ -30,7 +30,7 @@ class TestApp(unittest.TestCase):
             }
         ]
 
-        actual_response = self.app.get('/entry')
+        actual_response = self.app.get('/entries')
         data = json.loads(actual_response.get_data())
 
         self.assertEqual(actual_response.status_code, 200)
