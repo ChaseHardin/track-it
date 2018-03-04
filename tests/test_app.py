@@ -2,6 +2,8 @@ from flask import json
 from app import app
 import unittest
 
+from tests.entry.entry_data import EntryData
+
 
 class TestApp(unittest.TestCase):
     def setUp(self):
@@ -17,18 +19,7 @@ class TestApp(unittest.TestCase):
         self.assertEqual(response.data, "Service is Healthy")
 
     def test_get_summary__when_multiple_times_have_been_entered(self):
-        expected_response = [
-            {
-                'id': 1,
-                'category': 'merge request',
-                'summary': 'trying to get people to review'
-            },
-            {
-                'id': 2,
-                'category': 'build is down',
-                'summary': 'external team broke build'
-            }
-        ]
+        expected_response = EntryData().get_multiple_entries()
 
         actual_response = self.app.get('/entries')
         data = json.loads(actual_response.get_data())

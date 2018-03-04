@@ -2,6 +2,7 @@ import unittest
 
 from mock import patch
 from entry.services.entry_service import EntryService
+from tests.entry.entry_data import EntryData
 
 
 class TestSummaryService(unittest.TestCase):
@@ -9,18 +10,7 @@ class TestSummaryService(unittest.TestCase):
         self.service = EntryService()
 
     def test_get_entries__when_multiple_entries_exist(self):
-        expected = [
-            {
-                'id': 1,
-                'category': 'merge request',
-                'summary': 'trying to get people to review'
-            },
-            {
-                'id': 2,
-                'category': 'build is down',
-                'summary': 'external team broke build'
-            }
-        ]
+        expected = EntryData().get_multiple_entries()
 
         actual = self.service.get_entries()
         self.assertEqual(actual, expected)
