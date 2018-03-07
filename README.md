@@ -2,6 +2,12 @@
 
 *A time managing micro service that provides a summary of wasted time.*
 
+## Setup Dev Environment
+*To run the application, execute the requirements file by using the following command:*
+```
+pip install -Ur requirements.txt
+```
+
 ## Testing
 *The testing examples are here to provide some basic documentation on testing the application. Take a look at the spec file for more examples.*
 
