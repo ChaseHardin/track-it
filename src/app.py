@@ -1,6 +1,6 @@
 from flask import Flask, jsonify
 
-from entry.services.entry_service import EntryService
+from src.entry.services.entry_service import EntryService
 
 app = Flask(__name__)
 
